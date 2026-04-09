@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#020617;
+  color:white;
+}
+
+/* Sidebar */
+.sidebar {
+  width:220px;
+  height:100vh;
+  background:#0f172a;
+  position:fixed;
+  padding:20px;
+}
+
+.sidebar h2 {
+  color:#00f0ff;
+}
+
+.sidebar a {
+  display:block;
+  color:white;
+  text-decoration:none;
+  margin:15px 0;
+}
+
+/* Content */
+.content {
+  margin-left:240px;
+  padding:20px;
+}
+
+.card {
+  background:#0f172a;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 0 10px #00f0ff22;
+}
+
+input {
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:8px;
+  border:none;
+}
+
+button {
+  padding:10px;
+  background:#00f0ff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>ADMIN PANEL</h2>
+  <a href="#">Dashboard</a>
+  <a href="#">Cek Telegram</a>
+  <a href="#">User</a>
+  <a href="#">Saldo</a>
+  <a href="#">Logout</a>
+</div>
+
+<div class="content">
+
+  <h1>Dashboard</h1>
+
+  <div class="card">
+    <h3>Statistik</h3>
+    <p>User: 120</p>
+    <p>Saldo: Rp 1.200.000</p>
+  </div>
+
+  <div class="card">
+    <h3>Cek Username Telegram</h3>
+
+    <input type="text" id="username" placeholder="Masukkan Username Telegram">
+    <button onclick="cek()">Cek Data</button>
+
+    <div id="result"></div>
+  </div>
+
+</div>
+
+<script>
+function cek(){
+  let username = document.getElementById("username").value;
+
+  if(username === ""){
+    alert("Masukkan username!");
+    return;
+  }
+
+  // Simulasi hasil
+  document.getElementById("result").innerHTML = `
+    <hr>
+    <p><b>Username:</b> ${username}</p>
+    <p><b>ID Telegram:</b> 54839201</p>
+    <p><b>No HP:</b> +62 8xxx-xxxx-xxx</p>
+    <p style="color:lime">Status: Data ditemukan</p>
+  `;
+}
+</script>
+
+</body>
+</html>
